@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+.background_login{
+    background: #2d2d2d;
+}
+.logo img{
+    width: 10%;
+    padding: 2% 0 0 4%;
+}
+.logo h1{
+    margin: 6% 0px 0px 2%;
+    color: #f29c04;
+    text-shadow: -0.4px 0 white, 0 0.4px white, 0.4px 0 white, 0 -0.4px white;
+    font-family: 'Kanit', sans-serif;
+}
+.logo{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.retanglelogin{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    border: 0.4rem outset orange;
+    border-radius: 12px;
+}
+
+.retanglelogin .blockinput{
+    display: block;
+    margin: 0 auto;
+    margin-top: 8%;
+    padding: 0 8%;
+}
+.retanglelogin .blockinput .icon_user i{
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    color: white;
+    border: 0.2rem solid orange;
+    background-color: orange;
+    font-size: 20px;
+}
+.retanglelogin .blockinput .icon_password i{
+    position: absolute;
+    top: 62.7%;
+    left: 55%;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    color: white;
+    border: 0.22rem solid orange;
+    background-color: orange;
+    font-size: 20px;
+}
+.retanglelogin .blockinput .icon_submit i{
+    position: absolute;
+    top: 73.7%;
+    left: 62%;
+    color: white;
+    font-size: 20px;
+}
+.retanglelogin .background_login{
+    width: 55%;
+    background-color: white;
+    margin: 0 auto;
+}
+.retanglelogin .username{
+    width: 100%;
+    border: 0.1rem solid orange;
+    border-radius: 4px;
+    padding: 2%;
+    margin: 0 auto;
+    margin: 8% 0;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+.retanglelogin .password{
+    width: 100%;
+    margin-top: 20px;
+    border: 0.1rem solid orange;
+    border-radius: 4px;
+    padding: 2%;
+    margin: 0 auto;
+    margin: 8% 0;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+.retanglelogin .submit{
+    width: 80%;
+    background: #f29c04;
+    border: 0.1rem solid #68490b;
+    border-radius: 100px;
+    margin: 0 14%;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+
+.retanglelogin .blockinput .head{
+    display: flex;
+}
+.retanglelogin .blockinput .head i{
+    font-size: 32px;
+    margin: 0 auto;
+}

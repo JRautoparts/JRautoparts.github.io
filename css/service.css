@@ -1,0 +1,46 @@
+.container h2{
+    color: #F19F00;
+    text-align: center;
+}
+.container h5{
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+}
+.container hr{
+    width: 80%;
+    border: 4px solid #F19F00;
+    border-radius: 16px;
+}
+.container .service-menu{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+}
+.container .service-menu div{
+    cursor: pointer;
+    width: 300px;
+    height: auto;
+    background-color: #eeeeee;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px ;
+    margin: 2rem;
+}
+.container .service-menu img{
+    width: 100%;
+    height: auto;
+    border-bottom: solid 4px #F19F00;
+    border-radius: 4px 4px 0 0;
+}
+.container .service-menu h5{
+    color: #2D2D2E;
+    font-weight: 500 ;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+.container .service-menu div:hover{
+    background-color: #F19F00;
+    transition: opacity 0.3s;
+}

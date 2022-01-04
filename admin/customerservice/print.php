@@ -1,0 +1,191 @@
+<?php
+session_start();
+include('../../connect.php');
+if(!isset($_SESSION["username"])){
+    header("Location: ../../loginadmin.php");
+    $_SESSION["error"] = "กรุณาloginเพื่อเข้าสู่ระบบ";
+}
+else if(!isset($_GET["ID"])){
+    header("Location: ./customerservice.php");
+    $_SESSION["error"] = "กรุณาเลือกลำดับการแก้ไข";
+
+}
+else if(isset($_POST["logout"])){
+    session_destroy();
+    header("location: ../../loginadmin.php");
+    exit();
+}
+else{
+    $customer_service_id = $_GET["ID"];
+    $sql = "SELECT * FROM customer_services WHERE customer_services_ID = '$customer_service_id'";
+    $result = mysqli_query($conn, $sql);
+    $rowcustomer_service =  mysqli_fetch_assoc($result);
+    $service = $rowcustomer_service["service"];
+    $arraycustomer_service = explode(",",$rowcustomer_service["service"]);
+    $countcustomer_service = count($arraycustomer_service);
+    $arraycustomer_service_price = explode(",",$rowcustomer_service["service_price"]);
+    if(mysqli_num_rows($result)==0){
+        header("Location: ./customerservice.php");
+        $_SESSION["error"] = "ไม่พบข้อมูลที่เลือกกรุณาลองใหม่";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>JR Auto Part | Admin page</title>
+    <link rel="stylesheet" href="../../css/home.css">
+    <link rel="stylesheet" href="../../css/menu.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bx-menu'></i>
+        <span class="logo_name">JR Auto Parts</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="../statistics/stat.php">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">หน้าหลัก</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="../statistics/stat.php">หน้าหลัก</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="../userinformation/userinformation.php">
+                    <i class='bx bx-group' ></i>
+                    <span class="link_name">ลูกค้า</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="../userinformation/userinformation.php">ลูกค้า</a></li>
+                <li><a href="../userinformation/userinformation.php">ข้อมูลลูกค้า</a></li>
+                <li><a href="../customerservice/customerservice.php">การบริการลูกค้า</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="../serviceinformation/serviceinformation.php">
+                    <i class='bx bx-cart-alt' ></i>
+                    <span class="link_name">บริการ</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="../serviceinformation/serviceinformation.php">บริการ</a></li>
+                <li><a href="../serviceinformation/serviceinformation.php">การบริการ</a></li>
+                <li><a href="../serviceaccess/serviceaccess.php">การเข้ารับบริการ</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="../productinformation/productinformation.php">
+                    <i class='bx bx-package' ></i>
+                    <span class="link_name">สินค้า</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="../productinformation/productinformation.php">สินค้า</a></li>
+                <li><a href="../productinformation/productinformation.php">ข้อมูล</a></li>
+                <li><a href="../producttype/producttypeinformation.php">ประเภท</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="../news/newsinformation.php">
+                    <i class='bx bxs-megaphone' ></i>
+                    <span class="link_name">ประชาสัมพันธ์</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="../news/newsinformation.php">ประชาสัมพันธ์</a></li>
+                <li><a href="../news/newsinformation.php">ข่าวสาร</a></li>
+                <li><a href="../promotion/promotioninformation.php">โปรโมชั่น</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="../../image/Logo.png" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">Beeba Tester</div>
+                    <div class="job">Default profile</div>
+                </div>
+                <i class='bx bx-log-out' ></i>
+            </div>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <body>
+    <div id="divToPrint">
+        <style>
+            table, th, td {
+                border:1px solid black;
+            }
+        </style>
+        <div>
+            <h1>เจอาร์ อะไหล่ยนต์</h1>
+        </div>
+        <div>
+            <h1>รายงานการบริการ</h1>
+        </div>
+        <div>
+            <h1>วันที่/เวลา:<?php echo $rowcustomer_service["customer_services_date"]?>/<?php echo $rowcustomer_service["customer_services_time"]?></h1>
+        </div>
+        <div>
+            <h1>ทะเบียนรถ:<?php echo $rowcustomer_service["carlicense_num"]?></h1>
+        </div>
+        <div>
+            <h1>รายการเข้ารับบริการ</h1>
+            <table>
+                <tr>
+                    <th>รายการ</th>
+                    <th>ราคา</th>
+                </tr>
+
+                <?php for ($i = 0 ; $i < $countcustomer_service; $i++){
+                    $sqlservice = "SELECT service_name FROM  service WHERE service_ID = '$arraycustomer_service[$i]' ";
+                    $resultservice = mysqli_query($conn, $sqlservice);
+                    while($rows = mysqli_fetch_array($resultservice)):
+                        $service_name = $rows["service_name"];
+                        echo "<tr><th>$service_name</th><th>$arraycustomer_service_price[$i]</th></tr>";
+                    endwhile;
+                }?>
+
+                <tr>
+                    <th>รวม</th>
+                    <th><?php echo $rowcustomer_service["customer_services_price"]?></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <input type="button" value="print" onclick="PrintDiv();" />
+    <button><a href=""></a></button>
+    <script type="text/javascript">
+        function PrintDiv() {
+            var divToPrint = document.getElementById('divToPrint');
+            var popupWin = window.open('', '_blank', 'width=300,height=300');
+            popupWin.document.open();
+            popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+            popupWin.document.close();
+        }
+    </script>
+</body>
+</html>
+
+

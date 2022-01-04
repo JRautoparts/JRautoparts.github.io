@@ -1,0 +1,90 @@
+.container h2{
+    color: #F19F00;
+    text-align: center;
+}
+.container hr{
+    width: 80%;
+    border: 4px solid #F19F00;
+    border-radius: 16px;
+}
+.container img{
+    width: 300px;
+    height: auto;
+}
+/*-------------------------------------------------------------
+	PAGE CONTENT PRODUCT
+-------------------------------------------------------------*/
+.content-product .selection,
+.content-product .see-all{
+    text-align: center;
+}
+.content-product .product-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    text-align: center;
+}
+.content-product .product-list div{
+    width: 200px;
+    height: auto;
+    text-align: center;
+    border-radius: 16px;
+    padding: 1%;
+    cursor: pointer;
+    margin: 2% 0 0;
+}
+.content-product .product-list img{
+    width: 100%;
+    height: auto;
+    background-color: #eee;
+    border-bottom: #F19F00 solid 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+.content-product .product-list p{
+    display: none;
+}
+.content-product .product-list div:hover{
+    transition: 0.5s ease-in-out;
+    width: 220px;
+    height: auto;
+}
+.content-product .product-list div:hover img{
+    transition: 0.5s ease-in-out;
+    border-bottom: #F19F00 solid 60px;
+}
+.content-product .product-list div:hover p{
+    display: block;
+    position: absolute;
+    width: 180px;
+    margin: -60px 30px 0 ;
+    color: #ffffff;
+}
+.content-product label{
+    color: #eeeeee;
+    font-size: 24px;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.content-product .selected{
+    border: #F19F00 2px solid;
+}
+.content-product .selected:hover {
+    color: #2D2D2E;
+    background-color: #F19F00;
+    transition: 0.4s linear;
+}
+.content-product label:hover{
+    background-color: #F19F00;
+    border: #eeeeee 2px solid;
+}
+.content-product .see-all h4{
+    color: #eeeeee;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.content-product .see-all h4:hover{
+    color: #F19F00;
+}

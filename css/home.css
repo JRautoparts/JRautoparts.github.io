@@ -1,0 +1,95 @@
+/*---------------------------
+    Banner
+---------------------------*/
+.banner{
+    width: auto;
+    height: 800px;
+    font-family: 'Kanit', sans-serif;
+    border: 4px solid #F19F00;
+    border-radius: 16px;
+    background-size: cover;
+    background-image: url("../image/Banner.jpg");
+    text-align: center;
+}
+.banner .header{
+    width: 20rem;
+    height: 100px;
+    margin: 8rem auto 4rem;
+    color: #F19F00;
+    text-align: center;
+    transform: skew(-20deg);
+    background: #2D2D2E;
+    border-radius: 8px;
+}
+.banner .header h1{
+    color: #F19F00;
+    padding: 0.5rem 0;
+    font-size: 56px;
+}
+.banner .information h1{
+    color: #2D2D2E;
+    font-weight: 400;
+}
+.banner .highlight h1{
+    color: #2D2D2E;
+    font-weight: 500;
+    font-size: 56px;
+}
+.banner .highlight span{
+    color: #F19F00;
+    padding: 36px 30px;
+    background-color: #2D2D2E;
+    border-radius: 80%;
+    margin: 0 2rem;
+}
+.banner .preview {
+    display: flex;
+    justify-content: center;
+    margin: 4rem auto 2.5rem;
+}
+.banner .preview img{
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+}
+.banner .banner-end{
+    position: relative;
+    background-color: #F19F00;
+    width: 104%;
+    height: 2rem;
+    content: "";
+    border-radius: 8px;
+    margin-left: -2%;
+}
+
+/*---------------------------
+    About
+---------------------------*/
+.about {
+    margin:8rem 0;
+    padding: 0 1rem;
+}
+.about .information{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.about .information img{
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid #F19F00;
+}
+.about .information .detail{
+    width: 40rem;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 20px;
+}
+.about .information .detail h3{
+    text-align: center;
+    color: #ffffff;
+}
+.about .information .detail hr{
+    border: 2px solid #F19F00;
+}

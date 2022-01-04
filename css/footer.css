@@ -1,0 +1,106 @@
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #F19F00;
+    position: initial;
+    bottom: 0;
+}
+footer .footer-main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: auto;
+    padding: 4rem;
+}
+footer .footer-main .item{
+    width: 32rem;
+    padding: 2rem;
+}
+footer .footer-main .item h5{
+    text-align: center;
+}
+footer .footer-main .item .fa-store-alt,
+footer .footer-main .item .fa-phone-alt,
+footer .footer-main .item .fa-map-marker-alt {
+    color: #D21404;
+}
+footer .footer-main .item .service,
+/*footer .footer-main .item .contact,*/
+footer .footer-main .item .location{
+    display: flex;
+    justify-content: center;
+}
+
+/*------------------------------------
+Service
+------------------------------------*/
+footer .footer-main .item .service{
+    display: flex;
+    flex-flow: row nowrap;
+}
+footer .footer-main .item .service img{
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    padding: 8px;
+}
+footer .footer-main .item .service p{
+    font-weight: 500;
+    font-size: 24px;
+    padding: 0 12px;
+}
+footer .footer-main .item .service span{
+    text-decoration: underline;
+}
+/*------------------------------------
+Contact
+------------------------------------*/
+footer .footer-main .item .contact ul{
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 24px;
+}
+footer .footer-main .item .contact li{
+    margin-left: 4.5rem ;
+}
+footer .footer-main .item .contact span{
+    font-weight: 400;
+}
+footer .footer-main .item .contact .fa-facebook-f{
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: #3b5998;
+    border: 2px solid #ffffff;
+    margin-left: 6.5rem ;
+}
+/*------------------------------------
+Location
+------------------------------------*/
+footer .footer-main .item .location iframe{
+    width: 100%;
+    height: auto    ;
+    border-radius: 16px;
+}
+@media only screen and (min-width: 1860px){
+    /*------------------------------------
+    Line
+    ------------------------------------*/
+    footer .footer-main .line{
+        border: 1px solid #2D2D2E;
+        background-color: #2D2D2E;
+    }
+}
+@media only screen and (min-width: 1282px){
+    /*------------------------------------
+    Line
+    ------------------------------------*/
+    footer .footer-main #line1{
+        border: 1px solid #2D2D2E;
+        background-color: #2D2D2E;
+    }
+}

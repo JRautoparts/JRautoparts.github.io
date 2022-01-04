@@ -1,0 +1,156 @@
+.navbar-main{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0;
+    overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar-logo {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+}
+.navbar-logo img{
+    width: 120px;
+    height: auto;
+}
+.navbar-logo h3 {
+    padding: 0 0 0 12px;
+    color: #F19F00;
+    -webkit-text-stroke: 1px #ffffff;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-menu a{
+    width: 100%;
+    text-decoration: none;
+}
+.navbar-menu a:hover{
+    color: #F19F00;
+}
+.navbar-menu  a {
+    color: #6F6F6F;
+}
+.navbar-menu input#checkbox {
+    display: none;
+}
+
+.navbar-menu label {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    background: #F19F00;
+    border: 3px solid #ffffff;
+    border-radius: 16px;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+}
+
+.navbar-menu label:before,
+.navbar-menu label:after{
+    width: 24px;
+    height: 2px;
+    content:'';
+    position: absolute;
+    background: #ffffff;
+    margin-left: 13px;
+
+}
+.navbar-menu label:after {
+    box-shadow: 0 6px 0px #ffffff;
+    top: 24px;
+}
+.navbar-menu label:before {
+    top: 18px;
+    left: 0;
+}
+
+.navbar-menu label:hover {
+    background:rgba(255,255,255,.8);
+}
+
+.navbar-menu label:active {
+    background:rgba(255,255,255,.6);
+}
+
+
+.navbar-menu .menu-content {
+    position: absolute;
+    line-height: 2em;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 20px -10px rgba(0,0,0,.2);
+    overflow: hidden;
+    transition: opacity 0.5s linear;
+    font-size: 20px;
+    color: #6F6F6F;
+    opacity: 0;
+    border-radius: 0 20px 0 20px;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    margin-left: -18%;
+}
+
+.navbar-menu ul > li {
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border-left: 3px solid transparent;
+    font-weight: 300;
+}
+
+.navbar-menu ul > li {
+    border-bottom: 1px solid rgba(0,0,0,.03500);
+}
+
+.navbar-menu ul > li:last-child {
+    border-bottom: 0;
+
+}
+
+.navbar-menu ul > li:hover {
+    font-weight: 400;
+    color: #F19F00;
+    background: rgba(0,0,0,0.05);
+    border-left: 3px solid #F19F00;
+}
+.navbar-menu ul > li:active {
+    background: rgba(0,0,0,0.1);
+}
+
+
+.navbar-menu input:checked ~ .menu-content {
+    opacity: 1;
+}
+.navbar-menu input:checked ~ label {
+    background:#ffffff;
+    border-radius: 16px 16px 0 0;
+}
+.navbar-menu input:checked ~ label:before,
+.navbar-menu input:checked ~ label:after{
+    top: 24px;
+    background: #F19F00;
+    transition: 0.78s;
+}
+
+.navbar-menu input:checked ~ label:after {
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0px rgba(0,0,0,0);
+}
+
+.navbar-menu input:checked ~ label:before {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
